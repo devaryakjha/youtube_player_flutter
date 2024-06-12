@@ -12,8 +12,13 @@ class CurrentPosition extends StatefulWidget {
   /// Overrides the default [YoutubePlayerController].
   final YoutubePlayerController? controller;
 
+  final double fontSize;
+
   /// Creates [CurrentPosition] widget.
-  CurrentPosition({this.controller});
+  const CurrentPosition({
+    this.controller,
+    this.fontSize = 12.0,
+  });
 
   @override
   _CurrentPositionState createState() => _CurrentPositionState();
@@ -56,9 +61,9 @@ class _CurrentPositionState extends State<CurrentPosition> {
       durationFormatter(
         _controller.value.position.inMilliseconds,
       ),
-      style: const TextStyle(
+      style: TextStyle(
         color: Colors.white,
-        fontSize: 12.0,
+        fontSize: widget.fontSize,
       ),
     );
   }
@@ -69,8 +74,10 @@ class RemainingDuration extends StatefulWidget {
   /// Overrides the default [YoutubePlayerController].
   final YoutubePlayerController? controller;
 
+  final double fontSize;
+
   /// Creates [RemainingDuration] widget.
-  RemainingDuration({this.controller});
+  const RemainingDuration({this.controller, this.fontSize = 12.0});
 
   @override
   _RemainingDurationState createState() => _RemainingDurationState();
@@ -114,9 +121,9 @@ class _RemainingDurationState extends State<RemainingDuration> {
         (_controller.metadata.duration.inMilliseconds) -
             (_controller.value.position.inMilliseconds),
       )}",
-      style: const TextStyle(
+      style: TextStyle(
         color: Colors.white,
-        fontSize: 12.0,
+        fontSize: widget.fontSize,
       ),
     );
   }

@@ -14,10 +14,13 @@ class FullScreenButton extends StatefulWidget {
   /// Defines color of the button.
   final Color color;
 
+  final double? size;
+
   /// Creates [FullScreenButton] widget.
-  FullScreenButton({
+  const FullScreenButton({
     this.controller,
     this.color = Colors.white,
+    this.size,
   });
 
   @override
@@ -58,6 +61,7 @@ class _FullScreenButtonState extends State<FullScreenButton> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      iconSize: widget.size,
       icon: Icon(
         _controller.value.isFullScreen
             ? Icons.fullscreen_exit

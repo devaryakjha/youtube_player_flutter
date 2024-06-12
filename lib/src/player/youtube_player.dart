@@ -208,6 +208,8 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
     super.didUpdateWidget(oldWidget);
     oldWidget.controller.removeListener(listener);
     widget.controller.addListener(listener);
+    _aspectRatio = widget.aspectRatio;
+    setState(() {});
   }
 
   void listener() async {
