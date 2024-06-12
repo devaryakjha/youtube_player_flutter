@@ -15,10 +15,13 @@ class PlaybackSpeedButton extends StatefulWidget {
   /// Defines icon for the button.
   final Widget? icon;
 
+  final double iconDimension;
+
   /// Creates [PlaybackSpeedButton] widget.
   const PlaybackSpeedButton({
     this.controller,
     this.icon,
+    this.iconDimension = 20.0,
   });
 
   @override
@@ -54,8 +57,8 @@ class _PlaybackSpeedButtonState extends State<PlaybackSpeedButton> {
             Image.asset(
               'assets/speedometer.webp',
               package: 'youtube_player_flutter',
-              width: 20.0,
-              height: 20.0,
+              width: widget.iconDimension,
+              height: widget.iconDimension,
               color: Colors.white,
             ),
       ),

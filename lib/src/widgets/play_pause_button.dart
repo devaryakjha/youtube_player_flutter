@@ -15,10 +15,14 @@ class PlayPauseButton extends StatefulWidget {
   /// Defines placeholder widget to show when player is in buffering state.
   final Widget? bufferIndicator;
 
+  /// Size of the button.
+  final double size;
+
   /// Creates [PlayPauseButton] widget.
-  PlayPauseButton({
+  const PlayPauseButton({
     this.controller,
     this.bufferIndicator,
+    this.size = 60.0,
   });
 
   @override
@@ -90,7 +94,7 @@ class _PlayPauseButtonState extends State<PlayPauseButton>
               icon: AnimatedIcons.play_pause,
               progress: _animController.view,
               color: Colors.white,
-              size: 60.0,
+              size: widget.size,
             ),
           ),
         ),
